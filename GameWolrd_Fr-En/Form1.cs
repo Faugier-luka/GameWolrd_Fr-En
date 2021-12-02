@@ -23,13 +23,15 @@ namespace GameWolrd_Fr_En
         {
             InitializeComponent();
         }
+            //   StreamWriter sw = new StreamWriter("tB_WorldEnglish.txt", true, Encoding.ASCII);  //écrire
 
         private void button_Valider_Click(object sender, EventArgs e)
         {
+      
             try
             {
-             //   StreamWriter sw = new StreamWriter("tB_WorldEnglish.txt", true, Encoding.ASCII);  //écrire
-             StreamReader sr = new StreamReader("tB_WorldEnglish.txt");
+           
+             StreamReader sr = new StreamReader("C://Users/lfaugier/source/repos/Faugier-luka/GameWolrd_Fr-En/WorldEnglish.txt");// lecture
            
                 while (line != null)
                 {
@@ -41,12 +43,12 @@ namespace GameWolrd_Fr_En
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: " + ex.Message);
+                tB_WorldEnglish.Text = "Exception:" + ex.Message;
             }
-            finally
+            /*finally
             {
-                Console.WriteLine("Executing finally block.");
-            }
+                tB_WorldEnglish.Text = "Executing finally block.";
+            }*/
         }
     }
 }
