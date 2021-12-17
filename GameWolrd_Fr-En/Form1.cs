@@ -19,6 +19,7 @@ namespace GameWolrd_Fr_En
     {
         public Int64 i;
         string line ="";
+        string []tab1;
         public Form1()
         {
             InitializeComponent();
@@ -30,16 +31,20 @@ namespace GameWolrd_Fr_En
       
             try
             {
-           
-             StreamReader sr = new StreamReader("C://Users/lfaugier/source/repos/Faugier-luka/GameWolrd_Fr-En/WorldEnglish.txt");// lecture
-           
+                //C://Users/lfaugier/source/repos/Faugier-luka/GameWolrd_Fr-En/WorldEnglish.txt // pc fixe
+                // C:/Users/User/Source/Repos/Faugier-luka/GameWorld_Fr-En/WorldEnglish.txt // pc protable
+                StreamReader sr = new StreamReader("C:/Users/User/Source/Repos/Faugier-luka/GameWorld_Fr-En/WorldEnglish.txt");// lecture
+                int i = 0;
                 while (line != null)
                 {
                     tB_WorldEnglish.Text = line;
                     line = sr.ReadLine();
+                    tab1[i] = line;
+                    i++;
                 }
                 sr.Close();
-                //sw.Close();
+                //sw.Close();2
+;                tB_WorldEnglish.Text = tab1[2];
             }
             catch (Exception ex)
             {
@@ -49,6 +54,7 @@ namespace GameWolrd_Fr_En
             {
                 tB_WorldEnglish.Text = "Executing finally block.";
             }*/
+
         }
     }
 }
