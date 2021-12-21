@@ -44,10 +44,6 @@ namespace GameWolrd_Fr_En
 
                 tb_C_English.Text = tabEnglish[nombreEnglish];
                 tb_C_French.Text = tabFrancais[nombreFrancais];
-
-              
-
-
             }
             catch (Exception ex)
             {
@@ -89,6 +85,11 @@ namespace GameWolrd_Fr_En
                 MessageBox.Show("vous avez perdu", "fin du chargement de la bare", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void b_enchange_Click(object sender, EventArgs e)
+        {
+
+        }
         public  int RandomNombre()
         {
             Random aleatoire = new Random();
@@ -120,6 +121,7 @@ namespace GameWolrd_Fr_En
 
             sr.Close();
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {

@@ -38,6 +38,7 @@
             this.b_Gener = new System.Windows.Forms.Button();
             this.tbNombreCorrecte = new System.Windows.Forms.TextBox();
             this.tbNombreFaux = new System.Windows.Forms.TextBox();
+            this.b_enchange = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_Valider
@@ -130,11 +131,22 @@
             this.tbNombreFaux.Size = new System.Drawing.Size(100, 20);
             this.tbNombreFaux.TabIndex = 9;
             // 
+            // b_enchange
+            // 
+            this.b_enchange.Location = new System.Drawing.Point(366, 131);
+            this.b_enchange.Name = "b_enchange";
+            this.b_enchange.Size = new System.Drawing.Size(75, 23);
+            this.b_enchange.TabIndex = 10;
+            this.b_enchange.Text = "échange";
+            this.b_enchange.UseVisualStyleBackColor = true;
+            this.b_enchange.Click += new System.EventHandler(this.b_enchange_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.b_enchange);
             this.Controls.Add(this.tbNombreFaux);
             this.Controls.Add(this.tbNombreCorrecte);
             this.Controls.Add(this.b_Gener);
@@ -165,6 +177,7 @@
         private System.Windows.Forms.Button b_Gener;
         private System.Windows.Forms.TextBox tbNombreCorrecte;
         private System.Windows.Forms.TextBox tbNombreFaux;
+        private System.Windows.Forms.Button b_enchange;
     }
 }
 
