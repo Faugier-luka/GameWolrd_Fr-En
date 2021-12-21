@@ -153,7 +153,7 @@ appropriate
 approval
 approve
 approximately
-Arab
+arab
 architect
 area
 argue

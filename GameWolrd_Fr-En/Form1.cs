@@ -15,6 +15,8 @@ namespace GameWolrd_Fr_En
   
     public partial class Form1 : Form
     {
+        int nbrC;
+        int nbrF;
         string tabFrench;
         string lineEnglish ="";
         string lineFrench = "";
@@ -57,11 +59,34 @@ namespace GameWolrd_Fr_En
            
             if (tB_WorldFrench.Text == tb_C_French.Text)
             {
-                tB_WorldFrench.Text = "OK";
+                tbNombreCorrecte.Text += "I";
+                nbrC++;
             }
             else
             {
-                tB_WorldFrench.Text = "pas ok";
+                tbNombreFaux.Text += "I";
+                nbrF++;
+            }
+            tB_WorldFrench.Text = "";
+
+            if (nbrC == 31)
+            {
+                tB_WorldFrench.Text = "";
+                tB_WorldEnglish.Text = "";
+                tbNombreCorrecte.Text = "";
+                tbNombreFaux.Text = "";
+                nbrC = 0;
+                MessageBox.Show("vous avez ganier", "fin du chargement de la bare", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else if (nbrF == 31)
+            {
+                tB_WorldFrench.Text = "";
+                tB_WorldEnglish.Text = "";
+                tbNombreCorrecte.Text = "";
+                tbNombreFaux.Text = "";
+                nbrF = 0;
+                MessageBox.Show("vous avez perdu", "fin du chargement de la bare", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         public  int RandomNombre()

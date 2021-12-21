@@ -36,6 +36,8 @@
             this.tb_C_French = new System.Windows.Forms.TextBox();
             this.tb_C_English = new System.Windows.Forms.TextBox();
             this.b_Gener = new System.Windows.Forms.Button();
+            this.tbNombreCorrecte = new System.Windows.Forms.TextBox();
+            this.tbNombreFaux = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button_Valider
@@ -86,7 +88,7 @@
             // tb_C_French
             // 
             this.tb_C_French.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tb_C_French.Location = new System.Drawing.Point(285, 289);
+            this.tb_C_French.Location = new System.Drawing.Point(298, 428);
             this.tb_C_French.Name = "tb_C_French";
             this.tb_C_French.Size = new System.Drawing.Size(100, 20);
             this.tb_C_French.TabIndex = 5;
@@ -94,7 +96,7 @@
             // tb_C_English
             // 
             this.tb_C_English.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tb_C_English.Location = new System.Drawing.Point(381, 289);
+            this.tb_C_English.Location = new System.Drawing.Point(394, 428);
             this.tb_C_English.Name = "tb_C_English";
             this.tb_C_English.Size = new System.Drawing.Size(100, 20);
             this.tb_C_English.TabIndex = 6;
@@ -110,11 +112,31 @@
             this.b_Gener.UseVisualStyleBackColor = true;
             this.b_Gener.Click += new System.EventHandler(this.b_Gener_Click);
             // 
+            // tbNombreCorrecte
+            // 
+            this.tbNombreCorrecte.BackColor = System.Drawing.Color.Green;
+            this.tbNombreCorrecte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tbNombreCorrecte.Location = new System.Drawing.Point(240, 238);
+            this.tbNombreCorrecte.Name = "tbNombreCorrecte";
+            this.tbNombreCorrecte.Size = new System.Drawing.Size(100, 20);
+            this.tbNombreCorrecte.TabIndex = 8;
+            // 
+            // tbNombreFaux
+            // 
+            this.tbNombreFaux.BackColor = System.Drawing.Color.DarkRed;
+            this.tbNombreFaux.ForeColor = System.Drawing.Color.Red;
+            this.tbNombreFaux.Location = new System.Drawing.Point(456, 238);
+            this.tbNombreFaux.Name = "tbNombreFaux";
+            this.tbNombreFaux.Size = new System.Drawing.Size(100, 20);
+            this.tbNombreFaux.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbNombreFaux);
+            this.Controls.Add(this.tbNombreCorrecte);
             this.Controls.Add(this.b_Gener);
             this.Controls.Add(this.tb_C_English);
             this.Controls.Add(this.tb_C_French);
@@ -141,6 +163,8 @@
         private System.Windows.Forms.TextBox tb_C_French;
         private System.Windows.Forms.TextBox tb_C_English;
         private System.Windows.Forms.Button b_Gener;
+        private System.Windows.Forms.TextBox tbNombreCorrecte;
+        private System.Windows.Forms.TextBox tbNombreFaux;
     }
 }
 
