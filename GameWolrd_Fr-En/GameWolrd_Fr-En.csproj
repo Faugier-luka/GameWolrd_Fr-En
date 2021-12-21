@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="WorldEnglish.txt" />
+    <Content Include="WorldFrench.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

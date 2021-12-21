@@ -15,61 +15,92 @@ namespace GameWolrd_Fr_En
   
     public partial class Form1 : Form
     {
-      
-       string line ="";
- 
-  
+        string tabFrench;
+        string lineEnglish ="";
+        string lineFrench = "";
+        string[] tabEnglish = new string[3000];
+        string[] tabFrancais = new string[3000];
+        int nombreEnglish, nombreFrancais;
 
         public Form1()
         {
             InitializeComponent();
         }
-            //   StreamWriter sw = new StreamWriter("tB_WorldEnglish.txt", true, Encoding.ASCII);  //écrire
-
-        private void button_Valider_Click(object sender, EventArgs e)
+        //   StreamWriter sw = new StreamWriter("tB_WorldEnglish.txt", true, Encoding.ASCII);  //écrire
+        private void b_Gener_Click(object sender, EventArgs e)
         {
-             tB_WorldEnglish.Text = "";
-            string []tab1 = new string[3000];
-            int i = 0;
+            
             try
             {
-                //C://Users/lfaugier/source/repos/Faugier-luka/GameWolrd_Fr-En/WorldEnglish.txt // pc fixe
-                // C://Users/User/Source/Repos/Faugier-luka/GameWorld_Fr-En/WorldEnglish.txt // pc protable
-                StreamReader sr = new StreamReader("C://Users/User/source/repos/Faugier-luka/GameWolrd_Fr-En/WorldEnglish.txt");// lecture
-        
-                while (line != null)
-                {
-                    tB_WorldEnglish.Text = line;
-                    line = sr.ReadLine();
-                    tab1[i] = line;
-                    i+=1;
-                } // fabrication du tableau
+                lectureFichier();
+                nombreEnglish = RandomNombre();
+                nombreFrancais = RandomNombre();
+                tB_WorldEnglish.Text = tabEnglish[nombreEnglish];
 
-             
+               
+                tabFrench = tB_WorldFrench.Text;
 
-                sr.Close();
-           
+                tb_C_English.Text = tabEnglish[nombreEnglish];
+                tb_C_French.Text = tabFrancais[nombreFrancais];
+
               
-;              tB_WorldEnglish.Text = RandomTab();
+
+
             }
             catch (Exception ex)
             {
                 tB_WorldEnglish.Text = "Exception:" + ex.Message;
             }
-            /*finally
-            {
-                tB_WorldEnglish.Text = "Executing finally block.";
-            }*/
-
         }
-        public int RandomTab()
+        private void button_Valider_Click(object sender, EventArgs e)
         {
-            int rand_num;
-            Random rd = new Random();
-            rand_num = rd.Next(100,200);
-            return rand_num;
-            
+           
+            if (tB_WorldFrench.Text == tb_C_French.Text)
+            {
+                tB_WorldFrench.Text = "OK";
+            }
+            else
+            {
+                tB_WorldFrench.Text = "pas ok";
+            }
+        }
+        public  int RandomNombre()
+        {
+            Random aleatoire = new Random();
+            int entierUnChiffre = aleatoire.Next(0,171);
+            return entierUnChiffre;
+        }
+        public void lectureFichier()
+        {
+            //C://Users/lfaugier/source/repos/Faugier-luka/GameWolrd_Fr-En/WorldEnglish.txt // pc fixe
+            // C://Users/User/Source/Repos/Faugier-luka/GameWorld_Fr-En/WorldEnglish.txt // pc protable
+            StreamReader sr = new StreamReader("C://Users/User/source/repos/Faugier-luka/GameWolrd_Fr-En/WorldEnglish.txt");// lecture
+            StreamReader sre = new StreamReader("C://Users/User/source/repos/Faugier-luka/GameWolrd_Fr-En/WorldFrench.txt");
+            int i = 0;
+            while (lineEnglish != null)
+            {
+                tB_WorldEnglish.Text = lineEnglish;
+                lineEnglish = sr.ReadLine();
+                tabEnglish[i] = lineEnglish;
+                i += 1;
+            } // fabrication du tableau
+            int y = 0;
+            while (lineFrench != null)
+            {
+                tB_WorldFrench.Text = lineFrench;
+                lineFrench = sre.ReadLine();
+                tabFrancais[y] = lineFrench;
+                y++;
+            }
+
+            sr.Close();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //aucune idée a ne pas faire
+        }
+
+       
     }
 }
