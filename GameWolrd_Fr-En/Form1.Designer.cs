@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button_Valider = new System.Windows.Forms.Button();
             this.tB_WorldFrench = new System.Windows.Forms.TextBox();
             this.tB_WorldEnglish = new System.Windows.Forms.TextBox();
@@ -39,6 +40,8 @@
             this.tbNombreCorrecte = new System.Windows.Forms.TextBox();
             this.tbNombreFaux = new System.Windows.Forms.TextBox();
             this.b_enchange = new System.Windows.Forms.Button();
+            this.tb_nombreVisibleV = new System.Windows.Forms.TextBox();
+            this.tb_nombreVisibleF = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button_Valider
@@ -133,19 +136,40 @@
             // 
             // b_enchange
             // 
-            this.b_enchange.Location = new System.Drawing.Point(366, 131);
+            this.b_enchange.Image = global::GameWolrd_Fr_En.Properties.Resources.R;
+            this.b_enchange.Location = new System.Drawing.Point(366, 124);
             this.b_enchange.Name = "b_enchange";
-            this.b_enchange.Size = new System.Drawing.Size(75, 23);
+            this.b_enchange.Size = new System.Drawing.Size(75, 38);
             this.b_enchange.TabIndex = 10;
             this.b_enchange.Text = "échange";
             this.b_enchange.UseVisualStyleBackColor = true;
             this.b_enchange.Click += new System.EventHandler(this.b_enchange_Click);
+            // 
+            // tb_nombreVisibleV
+            // 
+            this.tb_nombreVisibleV.BackColor = System.Drawing.Color.Green;
+            this.tb_nombreVisibleV.ForeColor = System.Drawing.Color.Lime;
+            this.tb_nombreVisibleV.Location = new System.Drawing.Point(266, 264);
+            this.tb_nombreVisibleV.Name = "tb_nombreVisibleV";
+            this.tb_nombreVisibleV.Size = new System.Drawing.Size(47, 20);
+            this.tb_nombreVisibleV.TabIndex = 11;
+            // 
+            // tb_nombreVisibleF
+            // 
+            this.tb_nombreVisibleF.BackColor = System.Drawing.Color.Maroon;
+            this.tb_nombreVisibleF.ForeColor = System.Drawing.Color.Red;
+            this.tb_nombreVisibleF.Location = new System.Drawing.Point(485, 264);
+            this.tb_nombreVisibleF.Name = "tb_nombreVisibleF";
+            this.tb_nombreVisibleF.Size = new System.Drawing.Size(47, 20);
+            this.tb_nombreVisibleF.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tb_nombreVisibleF);
+            this.Controls.Add(this.tb_nombreVisibleV);
             this.Controls.Add(this.b_enchange);
             this.Controls.Add(this.tbNombreFaux);
             this.Controls.Add(this.tbNombreCorrecte);
@@ -157,6 +181,7 @@
             this.Controls.Add(this.tB_WorldEnglish);
             this.Controls.Add(this.tB_WorldFrench);
             this.Controls.Add(this.button_Valider);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -177,6 +202,8 @@
         private System.Windows.Forms.Button b_Gener;
         private System.Windows.Forms.TextBox tbNombreCorrecte;
         private System.Windows.Forms.TextBox tbNombreFaux;
+        private System.Windows.Forms.TextBox tb_nombreVisibleV;
+        private System.Windows.Forms.TextBox tb_nombreVisibleF;
         private System.Windows.Forms.Button b_enchange;
     }
 }

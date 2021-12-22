@@ -15,14 +15,11 @@ namespace GameWolrd_Fr_En
   
     public partial class Form1 : Form
     {
-        int nbrC;
-        int nbrF;
-        string tabFrench;
-        string lineEnglish ="";
-        string lineFrench = "";
+        int nbrF, nbrC, nombreEnglish, nombreFrancais, possition=0;
+        string tabFrench, lineEnglish ="", lineFrench = "";
         string[] tabEnglish = new string[3000];
         string[] tabFrancais = new string[3000];
-        int nombreEnglish, nombreFrancais;
+       
 
         public Form1()
         {
@@ -52,18 +49,15 @@ namespace GameWolrd_Fr_En
         }
         private void button_Valider_Click(object sender, EventArgs e)
         {
-           
-            if (tB_WorldFrench.Text == tb_C_French.Text)
+           if (possition == 0)
             {
-                tbNombreCorrecte.Text += "I";
-                nbrC++;
+                correctionFE();
             }
-            else
+           else if ( possition == 1)
             {
-                tbNombreFaux.Text += "I";
-                nbrF++;
+                correctionEF();
             }
-            tB_WorldFrench.Text = "";
+          
 
             if (nbrC == 31)
             {
@@ -71,6 +65,8 @@ namespace GameWolrd_Fr_En
                 tB_WorldEnglish.Text = "";
                 tbNombreCorrecte.Text = "";
                 tbNombreFaux.Text = "";
+                tb_nombreVisibleF.Text = "";
+                tb_nombreVisibleV.Text = "";
                 nbrC = 0;
                 MessageBox.Show("vous avez ganier", "fin du chargement de la bare", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -81,6 +77,8 @@ namespace GameWolrd_Fr_En
                 tB_WorldEnglish.Text = "";
                 tbNombreCorrecte.Text = "";
                 tbNombreFaux.Text = "";
+                tb_nombreVisibleV.Text = "";
+                tb_nombreVisibleF.Text = "";
                 nbrF = 0;
                 MessageBox.Show("vous avez perdu", "fin du chargement de la bare", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -88,8 +86,53 @@ namespace GameWolrd_Fr_En
 
         private void b_enchange_Click(object sender, EventArgs e)
         {
-
+            if (possition == 0)
+            {
+                possition = 1;
+            }
+            else if (possition == 1)
+            {
+                possition = 0;
+            }
         }
+
+        public void correctionFE()
+        {
+            if (tB_WorldFrench.Text == tb_C_French.Text)
+            {
+                tbNombreCorrecte.Text += "I";
+                nbrC++;
+                tb_nombreVisibleV.Text = nbrC.ToString();
+            }
+            else
+            {
+               
+                tbNombreFaux.Text += "I";
+                nbrF++;
+                tb_nombreVisibleF.Text = nbrF.ToString();
+            }
+            tB_WorldFrench.Text = "";
+        }
+
+        public void correctionEF()
+        {
+            tB_WorldEnglish.Enabled = true;
+            if (tB_WorldEnglish.Text == tb_C_English.Text)
+            {
+                tbNombreCorrecte.Text += "I";
+                nbrC++;
+                tb_nombreVisibleV.Text = nbrC.ToString();
+            }
+            else
+            {
+               
+                tbNombreFaux.Text += "I";
+                nbrF++;
+                tb_nombreVisibleF.Text = nbrF.ToString();
+            }
+            tB_WorldEnglish.Text = "";
+        }
+
         public  int RandomNombre()
         {
             Random aleatoire = new Random();
