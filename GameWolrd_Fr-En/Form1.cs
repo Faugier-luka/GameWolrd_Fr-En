@@ -24,23 +24,29 @@ namespace GameWolrd_Fr_En
         public Form1()
         {
             InitializeComponent();
+            lectureFichier();
         }
         //   StreamWriter sw = new StreamWriter("tB_WorldEnglish.txt", true, Encoding.ASCII);  //écrire
         private void b_Gener_Click(object sender, EventArgs e)
         {
-            
             try
             {
-                lectureFichier();
                 nombreEnglish = RandomNombre();
-                nombreFrancais = RandomNombre();
-                tB_WorldEnglish.Text = tabEnglish[nombreEnglish];
-
-               
+                nombreFrancais = RandomNombre();               
                 tabFrench = tB_WorldFrench.Text;
-
                 tb_C_English.Text = tabEnglish[nombreEnglish];
                 tb_C_French.Text = tabFrancais[nombreFrancais];
+
+
+                if (possition == 0)
+                {
+                    tB_WorldEnglish.Text = tabEnglish[nombreEnglish];
+                }
+                else if (possition == 1)
+                {
+                    tB_WorldFrench.Text = tabFrancais[nombreFrancais];
+                }
+               
             }
             catch (Exception ex)
             {
@@ -49,16 +55,34 @@ namespace GameWolrd_Fr_En
         }
         private void button_Valider_Click(object sender, EventArgs e)
         {
-           if (possition == 0)
+            if (possition == 0)
             {
                 correctionFE();
             }
-           else if ( possition == 1)
+            else if (possition == 1)
             {
                 correctionEF();
             }
-          
+            message();
+          }
+        private void b_enchange_Click(object sender, EventArgs e)
+        {
+            if (possition == 0)
+            {
+                possition = 1;
+                tB_WorldEnglish.Enabled = true;
+                tB_WorldFrench.Enabled = false;
+            }
+            else if (possition == 1)
+            {
+                possition = 0;
+                tB_WorldEnglish.Enabled = false;
+                tB_WorldFrench.Enabled = true;
+            }
+        }
 
+        public void message()
+        {
             if (nbrC == 31)
             {
                 tB_WorldFrench.Text = "";
@@ -84,18 +108,6 @@ namespace GameWolrd_Fr_En
             }
         }
 
-        private void b_enchange_Click(object sender, EventArgs e)
-        {
-            if (possition == 0)
-            {
-                possition = 1;
-            }
-            else if (possition == 1)
-            {
-                possition = 0;
-            }
-        }
-
         public void correctionFE()
         {
             if (tB_WorldFrench.Text == tb_C_French.Text)
@@ -116,7 +128,7 @@ namespace GameWolrd_Fr_En
 
         public void correctionEF()
         {
-            tB_WorldEnglish.Enabled = true;
+           
             if (tB_WorldEnglish.Text == tb_C_English.Text)
             {
                 tbNombreCorrecte.Text += "I";
