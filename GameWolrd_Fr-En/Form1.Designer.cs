@@ -42,6 +42,7 @@
             this.b_enchange = new System.Windows.Forms.Button();
             this.tb_nombreVisibleV = new System.Windows.Forms.TextBox();
             this.tb_nombreVisibleF = new System.Windows.Forms.TextBox();
+            this.cb_Mot = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button_Valider
@@ -163,11 +164,52 @@
             this.tb_nombreVisibleF.Size = new System.Drawing.Size(47, 20);
             this.tb_nombreVisibleF.TabIndex = 12;
             // 
+            // cb_Mot
+            // 
+            this.cb_Mot.FormattingEnabled = true;
+            this.cb_Mot.Items.AddRange(new object[] {
+            "0 à 100",
+            "101 à 200",
+            "201 à 300",
+            "301 à 400",
+            "401 à 500",
+            "501 à 600",
+            "601 à 700",
+            "701 à 800",
+            "801 à 900",
+            "901 à 1000",
+            "1001 à 1100",
+            "1101 à 1200",
+            "1201 à 1300",
+            "1301 à 1400",
+            "1401 à 1500",
+            "1501 à 1600",
+            "1601 à 1700",
+            "1701 à 1800",
+            "1801 à 1900",
+            "1901 à 2000",
+            "2001 à 2100",
+            "2101 à 2200",
+            "2201 à 2300",
+            "2301 à 2400",
+            "2401 à 2500",
+            "2501 à 2600",
+            "2601 à 2700",
+            "2701 à 2800",
+            "2801 à 2900",
+            "2901 à 3000"});
+            this.cb_Mot.Location = new System.Drawing.Point(93, 333);
+            this.cb_Mot.Name = "cb_Mot";
+            this.cb_Mot.Size = new System.Drawing.Size(121, 21);
+            this.cb_Mot.TabIndex = 13;
+            this.cb_Mot.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cb_Mot);
             this.Controls.Add(this.tb_nombreVisibleF);
             this.Controls.Add(this.tb_nombreVisibleV);
             this.Controls.Add(this.b_enchange);
@@ -184,7 +226,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,6 +246,7 @@
         private System.Windows.Forms.TextBox tb_nombreVisibleV;
         private System.Windows.Forms.TextBox tb_nombreVisibleF;
         private System.Windows.Forms.Button b_enchange;
+        private System.Windows.Forms.ComboBox cb_Mot;
     }
 }
 
